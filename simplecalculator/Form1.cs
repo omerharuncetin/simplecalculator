@@ -46,7 +46,7 @@ namespace simplecalculator
             if (Dogrula())
             {
                 int toplam = Topla(int.Parse(txtBirinciSayi.Text), int.Parse(txtIkinciSayi.Text));
-                MessageBox.Show("Toplam: " + toplam);
+                txtSonuc.Text = toplam.ToString();
             }
             else
             {
