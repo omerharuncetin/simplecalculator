@@ -74,7 +74,7 @@
             this.txtIkinciSayi.Margin = new System.Windows.Forms.Padding(4);
             this.txtIkinciSayi.Name = "txtIkinciSayi";
             this.txtIkinciSayi.Size = new System.Drawing.Size(284, 27);
-            this.txtIkinciSayi.TabIndex = 9;
+            this.txtIkinciSayi.TabIndex = 1;
             // 
             // lblIkinciSayi
             // 
@@ -92,7 +92,7 @@
             this.txtBirinciSayi.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirinciSayi.Name = "txtBirinciSayi";
             this.txtBirinciSayi.Size = new System.Drawing.Size(284, 27);
-            this.txtBirinciSayi.TabIndex = 7;
+            this.txtBirinciSayi.TabIndex = 0;
             // 
             // btnTopla
             // 
@@ -100,7 +100,7 @@
             this.btnTopla.Margin = new System.Windows.Forms.Padding(4);
             this.btnTopla.Name = "btnTopla";
             this.btnTopla.Size = new System.Drawing.Size(205, 40);
-            this.btnTopla.TabIndex = 6;
+            this.btnTopla.TabIndex = 2;
             this.btnTopla.Text = "Topla";
             this.btnTopla.UseVisualStyleBackColor = true;
             this.btnTopla.Click += new System.EventHandler(this.btnTopla_Click);

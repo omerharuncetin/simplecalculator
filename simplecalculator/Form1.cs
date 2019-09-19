@@ -36,13 +36,17 @@ namespace simplecalculator
                 return false;
             }
         }
-        private void EkraniAyarla()
+        private void EkraniAyarla(bool toplamBasarili = false)
         {
-            txtBirinciSayi.Text = txtIkinciSayi.Text = "0";
-            txtBirinciSayi.Focus();
+            if (!toplamBasarili)
+            {
+                txtBirinciSayi.Text = txtIkinciSayi.Text = "0";
+                txtBirinciSayi.Focus();
+            }
         }
         private void btnTopla_Click(object sender, EventArgs e)
         {
+            bool dogrulamaSonucu = Dogrula();
             if (Dogrula())
             {
                 int toplam = Topla(int.Parse(txtBirinciSayi.Text), int.Parse(txtIkinciSayi.Text));
@@ -52,7 +56,7 @@ namespace simplecalculator
             {
                 MessageBox.Show("Girdiğiniz değerler hatalı!");
             }
-            EkraniAyarla();
+            EkraniAyarla(dogrulamaSonucu);
 
         }
 
