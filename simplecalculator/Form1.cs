@@ -36,6 +36,11 @@ namespace simplecalculator
                 return false;
             }
         }
+        private void EkraniAyarla()
+        {
+            txtBirinciSayi.Text = txtIkinciSayi.Text = "0";
+            txtBirinciSayi.Focus();
+        }
         private void btnTopla_Click(object sender, EventArgs e)
         {
             if (Dogrula())
@@ -47,7 +52,13 @@ namespace simplecalculator
             {
                 MessageBox.Show("Girdiğiniz değerler hatalı!");
             }
+            EkraniAyarla();
 
+        }
+
+        private void FormTopla_Shown(object sender, EventArgs e)
+        {
+            EkraniAyarla();
         }
     }
 }

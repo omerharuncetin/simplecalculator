@@ -97,6 +97,7 @@
             this.Name = "FormTopla";
             this.ShowIcon = false;
             this.Text = "Toplama";
+            this.Shown += new System.EventHandler(this.FormTopla_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
