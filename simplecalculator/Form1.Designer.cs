@@ -42,6 +42,7 @@
             this.lvLog = new System.Windows.Forms.ListView();
             this.btnGeri = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
+            this.btnYazdir = new System.Windows.Forms.Button();
             this.tabToplam.SuspendLayout();
             this.tabToplama.SuspendLayout();
             this.tabLog.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // tabToplama
             // 
+            this.tabToplama.BackColor = System.Drawing.Color.SlateGray;
             this.tabToplama.Controls.Add(this.btnIleri);
             this.tabToplama.Controls.Add(this.txtSonuc);
             this.tabToplama.Controls.Add(this.lblSonuc);
@@ -74,7 +76,6 @@
             this.tabToplama.Size = new System.Drawing.Size(542, 400);
             this.tabToplama.TabIndex = 0;
             this.tabToplama.Text = "Toplama";
-            this.tabToplama.UseVisualStyleBackColor = true;
             // 
             // txtIkinciSayi
             // 
@@ -88,6 +89,7 @@
             // lblIkinciSayi
             // 
             this.lblIkinciSayi.AutoSize = true;
+            this.lblIkinciSayi.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblIkinciSayi.Location = new System.Drawing.Point(34, 105);
             this.lblIkinciSayi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIkinciSayi.Name = "lblIkinciSayi";
@@ -106,18 +108,24 @@
             // 
             // btnTopla
             // 
-            this.btnTopla.Location = new System.Drawing.Point(175, 169);
+            this.btnTopla.BackColor = System.Drawing.Color.Transparent;
+            this.btnTopla.FlatAppearance.BorderSize = 0;
+            this.btnTopla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTopla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTopla.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTopla.Location = new System.Drawing.Point(183, 170);
             this.btnTopla.Margin = new System.Windows.Forms.Padding(4);
             this.btnTopla.Name = "btnTopla";
-            this.btnTopla.Size = new System.Drawing.Size(234, 40);
+            this.btnTopla.Size = new System.Drawing.Size(215, 38);
             this.btnTopla.TabIndex = 2;
             this.btnTopla.Text = "Topla";
-            this.btnTopla.UseVisualStyleBackColor = true;
+            this.btnTopla.UseVisualStyleBackColor = false;
             this.btnTopla.Click += new System.EventHandler(this.btnTopla_Click);
             // 
             // lblBirinciSayi
             // 
             this.lblBirinciSayi.AutoSize = true;
+            this.lblBirinciSayi.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblBirinciSayi.Location = new System.Drawing.Point(34, 54);
             this.lblBirinciSayi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirinciSayi.Name = "lblBirinciSayi";
@@ -127,7 +135,7 @@
             // 
             // txtSonuc
             // 
-            this.txtSonuc.Location = new System.Drawing.Point(147, 269);
+            this.txtSonuc.Location = new System.Drawing.Point(147, 263);
             this.txtSonuc.Margin = new System.Windows.Forms.Padding(4);
             this.txtSonuc.Name = "txtSonuc";
             this.txtSonuc.ReadOnly = true;
@@ -137,7 +145,8 @@
             // lblSonuc
             // 
             this.lblSonuc.AutoSize = true;
-            this.lblSonuc.Location = new System.Drawing.Point(67, 272);
+            this.lblSonuc.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblSonuc.Location = new System.Drawing.Point(67, 266);
             this.lblSonuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSonuc.Name = "lblSonuc";
             this.lblSonuc.Size = new System.Drawing.Size(61, 20);
@@ -146,6 +155,8 @@
             // 
             // tabLog
             // 
+            this.tabLog.BackColor = System.Drawing.Color.SlateGray;
+            this.tabLog.Controls.Add(this.btnYazdir);
             this.tabLog.Controls.Add(this.btnTemizle);
             this.tabLog.Controls.Add(this.btnGeri);
             this.tabLog.Controls.Add(this.lvLog);
@@ -154,32 +165,41 @@
             this.tabLog.Size = new System.Drawing.Size(542, 400);
             this.tabLog.TabIndex = 1;
             this.tabLog.Text = "Loglama";
-            this.tabLog.UseVisualStyleBackColor = true;
             // 
             // btnIleri
             // 
-            this.btnIleri.Location = new System.Drawing.Point(363, 341);
+            this.btnIleri.BackColor = System.Drawing.Color.Transparent;
+            this.btnIleri.FlatAppearance.BorderSize = 0;
+            this.btnIleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIleri.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIleri.Location = new System.Drawing.Point(363, 326);
             this.btnIleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnIleri.Name = "btnIleri";
             this.btnIleri.Size = new System.Drawing.Size(121, 33);
             this.btnIleri.TabIndex = 12;
             this.btnIleri.Text = "İleri";
-            this.btnIleri.UseVisualStyleBackColor = true;
+            this.btnIleri.UseVisualStyleBackColor = false;
             this.btnIleri.Click += new System.EventHandler(this.btnIleri_Click);
             // 
             // lvLog
             // 
+            this.lvLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lvLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lvLog.ForeColor = System.Drawing.SystemColors.Window;
             this.lvLog.HideSelection = false;
-            this.lvLog.Location = new System.Drawing.Point(3, 0);
+            this.lvLog.Location = new System.Drawing.Point(0, 0);
             this.lvLog.Name = "lvLog";
-            this.lvLog.Size = new System.Drawing.Size(539, 352);
+            this.lvLog.Size = new System.Drawing.Size(542, 352);
             this.lvLog.TabIndex = 0;
             this.lvLog.UseCompatibleStateImageBehavior = false;
             this.lvLog.View = System.Windows.Forms.View.List;
             // 
             // btnGeri
             // 
-            this.btnGeri.Location = new System.Drawing.Point(83, 358);
+            this.btnGeri.FlatAppearance.BorderSize = 0;
+            this.btnGeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeri.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGeri.Location = new System.Drawing.Point(33, 359);
             this.btnGeri.Name = "btnGeri";
             this.btnGeri.Size = new System.Drawing.Size(121, 33);
             this.btnGeri.TabIndex = 1;
@@ -189,13 +209,29 @@
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(367, 358);
+            this.btnTemizle.FlatAppearance.BorderSize = 0;
+            this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTemizle.Location = new System.Drawing.Point(211, 358);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(121, 33);
             this.btnTemizle.TabIndex = 2;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // btnYazdir
+            // 
+            this.btnYazdir.FlatAppearance.BorderSize = 0;
+            this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYazdir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnYazdir.Location = new System.Drawing.Point(393, 358);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(121, 33);
+            this.btnYazdir.TabIndex = 3;
+            this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // FormTopla
             // 
@@ -234,6 +270,7 @@
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.Button btnGeri;
         private System.Windows.Forms.ListView lvLog;
+        private System.Windows.Forms.Button btnYazdir;
     }
 }
 

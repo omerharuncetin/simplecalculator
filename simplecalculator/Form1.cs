@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace simplecalculator
 {
@@ -51,12 +52,16 @@ namespace simplecalculator
             {
                 int toplam = Topla(int.Parse(txtBirinciSayi.Text), int.Parse(txtIkinciSayi.Text));
                 txtSonuc.Text = toplam.ToString();
-                lvLog.Items.Add("Toplama işlemi başarılı:" + toplam);
+                var satir = lvLog.Items.Add($"Toplama işlemi başarılı: {txtBirinciSayi.Text} + {txtIkinciSayi.Text} = {toplam}");
+                satir.BackColor = Color.Green;
             }
             else
             {
                 MessageBox.Show("Girdiğiniz değerler hatalı!");
-                lvLog.Items.Add("Toplama işlemi başarısız! txtbir = " + txtBirinciSayi.Text + " txtiki = " + txtIkinciSayi.Text);
+                var satir = lvLog.Items.Add("Toplama işlemi başarısız! txtbir = " + txtBirinciSayi.Text + 
+                                            " txtiki = " + txtIkinciSayi.Text);
+                txtSonuc.Text = "Hatalı Toplama!";
+                satir.BackColor = Color.Red;
             }
             EkraniAyarla(dogrulamaSonucu);
 
@@ -69,17 +74,10 @@ namespace simplecalculator
 
         private void txtBirinciSayi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (
-                char.IsLetter(e.KeyChar) ||
-                char.IsSymbol(e.KeyChar) ||
-                char.IsWhiteSpace(e.KeyChar) ||
-                char.IsPunctuation(e.KeyChar)
-                )
-                e.Handled = true;
-            
+            ValidasyonKontrolü(e);
         }
 
-        private void txtIkinciSayi_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidasyonKontrolü(KeyPressEventArgs e)
         {
             if (
                 char.IsLetter(e.KeyChar) ||
@@ -88,6 +86,11 @@ namespace simplecalculator
                 char.IsPunctuation(e.KeyChar)
                 )
                 e.Handled = true;
+        }
+
+        private void txtIkinciSayi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidasyonKontrolü(e);
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
@@ -103,6 +106,35 @@ namespace simplecalculator
         private void btnIleri_Click(object sender, EventArgs e)
         {
             tabToplam.SelectedTab = tabLog;
+        }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            DosyayaYazdir();
+        }
+
+        private void DosyayaYazdir()
+        {
+            foreach (var item in lvLog.Items)
+            {
+                string duzgunVeri = VeriyiDuzenle(item);
+                File.AppendAllText("loglar.txt", duzgunVeri + Environment.NewLine);
+            }
+        }
+
+        private string VeriyiDuzenle(object item)
+        {
+            string duzgunVeri = "";
+            int harfSayisi = 0;
+            foreach (var harf in item.ToString())
+            {
+                if (harfSayisi > 13)
+                {
+                    duzgunVeri += harf;
+                }
+                harfSayisi++;
+            }
+            return duzgunVeri;
         }
     }
 }
