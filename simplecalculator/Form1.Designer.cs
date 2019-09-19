@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabToplam = new System.Windows.Forms.TabControl();
             this.tabToplama = new System.Windows.Forms.TabPage();
             this.txtIkinciSayi = new System.Windows.Forms.TextBox();
             this.lblIkinciSayi = new System.Windows.Forms.Label();
@@ -37,22 +37,30 @@
             this.lblBirinciSayi = new System.Windows.Forms.Label();
             this.txtSonuc = new System.Windows.Forms.TextBox();
             this.lblSonuc = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tabLog = new System.Windows.Forms.TabPage();
+            this.btnIleri = new System.Windows.Forms.Button();
+            this.lvLog = new System.Windows.Forms.ListView();
+            this.btnGeri = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.tabToplam.SuspendLayout();
             this.tabToplama.SuspendLayout();
+            this.tabLog.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabToplam
             // 
-            this.tabControl1.Controls.Add(this.tabToplama);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 433);
-            this.tabControl1.TabIndex = 0;
+            this.tabToplam.Controls.Add(this.tabToplama);
+            this.tabToplam.Controls.Add(this.tabLog);
+            this.tabToplam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabToplam.Location = new System.Drawing.Point(0, 0);
+            this.tabToplam.Name = "tabToplam";
+            this.tabToplam.SelectedIndex = 0;
+            this.tabToplam.Size = new System.Drawing.Size(550, 433);
+            this.tabToplam.TabIndex = 0;
             // 
             // tabToplama
             // 
+            this.tabToplama.Controls.Add(this.btnIleri);
             this.tabToplama.Controls.Add(this.txtSonuc);
             this.tabToplama.Controls.Add(this.lblSonuc);
             this.tabToplama.Controls.Add(this.txtIkinciSayi);
@@ -63,7 +71,7 @@
             this.tabToplama.Location = new System.Drawing.Point(4, 29);
             this.tabToplama.Name = "tabToplama";
             this.tabToplama.Padding = new System.Windows.Forms.Padding(1);
-            this.tabToplama.Size = new System.Drawing.Size(638, 400);
+            this.tabToplama.Size = new System.Drawing.Size(542, 400);
             this.tabToplama.TabIndex = 0;
             this.tabToplama.Text = "Toplama";
             this.tabToplama.UseVisualStyleBackColor = true;
@@ -98,10 +106,10 @@
             // 
             // btnTopla
             // 
-            this.btnTopla.Location = new System.Drawing.Point(179, 182);
+            this.btnTopla.Location = new System.Drawing.Point(175, 169);
             this.btnTopla.Margin = new System.Windows.Forms.Padding(4);
             this.btnTopla.Name = "btnTopla";
-            this.btnTopla.Size = new System.Drawing.Size(205, 40);
+            this.btnTopla.Size = new System.Drawing.Size(234, 40);
             this.btnTopla.TabIndex = 2;
             this.btnTopla.Text = "Topla";
             this.btnTopla.UseVisualStyleBackColor = true;
@@ -119,29 +127,82 @@
             // 
             // txtSonuc
             // 
-            this.txtSonuc.Location = new System.Drawing.Point(147, 290);
+            this.txtSonuc.Location = new System.Drawing.Point(147, 269);
             this.txtSonuc.Margin = new System.Windows.Forms.Padding(4);
             this.txtSonuc.Name = "txtSonuc";
             this.txtSonuc.ReadOnly = true;
-            this.txtSonuc.Size = new System.Drawing.Size(284, 27);
+            this.txtSonuc.Size = new System.Drawing.Size(337, 27);
             this.txtSonuc.TabIndex = 11;
             // 
             // lblSonuc
             // 
             this.lblSonuc.AutoSize = true;
-            this.lblSonuc.Location = new System.Drawing.Point(67, 293);
+            this.lblSonuc.Location = new System.Drawing.Point(67, 272);
             this.lblSonuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSonuc.Name = "lblSonuc";
             this.lblSonuc.Size = new System.Drawing.Size(61, 20);
             this.lblSonuc.TabIndex = 10;
             this.lblSonuc.Text = "Sonuç:";
             // 
+            // tabLog
+            // 
+            this.tabLog.Controls.Add(this.btnTemizle);
+            this.tabLog.Controls.Add(this.btnGeri);
+            this.tabLog.Controls.Add(this.lvLog);
+            this.tabLog.Location = new System.Drawing.Point(4, 29);
+            this.tabLog.Name = "tabLog";
+            this.tabLog.Size = new System.Drawing.Size(542, 400);
+            this.tabLog.TabIndex = 1;
+            this.tabLog.Text = "Loglama";
+            this.tabLog.UseVisualStyleBackColor = true;
+            // 
+            // btnIleri
+            // 
+            this.btnIleri.Location = new System.Drawing.Point(363, 341);
+            this.btnIleri.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIleri.Name = "btnIleri";
+            this.btnIleri.Size = new System.Drawing.Size(121, 33);
+            this.btnIleri.TabIndex = 12;
+            this.btnIleri.Text = "İleri";
+            this.btnIleri.UseVisualStyleBackColor = true;
+            this.btnIleri.Click += new System.EventHandler(this.btnIleri_Click);
+            // 
+            // lvLog
+            // 
+            this.lvLog.HideSelection = false;
+            this.lvLog.Location = new System.Drawing.Point(3, 0);
+            this.lvLog.Name = "lvLog";
+            this.lvLog.Size = new System.Drawing.Size(539, 352);
+            this.lvLog.TabIndex = 0;
+            this.lvLog.UseCompatibleStateImageBehavior = false;
+            this.lvLog.View = System.Windows.Forms.View.List;
+            // 
+            // btnGeri
+            // 
+            this.btnGeri.Location = new System.Drawing.Point(83, 358);
+            this.btnGeri.Name = "btnGeri";
+            this.btnGeri.Size = new System.Drawing.Size(121, 33);
+            this.btnGeri.TabIndex = 1;
+            this.btnGeri.Text = "Geri";
+            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(367, 358);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(121, 33);
+            this.btnTemizle.TabIndex = 2;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // FormTopla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 433);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(550, 433);
+            this.Controls.Add(this.tabToplam);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTopla";
@@ -149,16 +210,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Toplama";
             this.Shown += new System.EventHandler(this.FormTopla_Shown);
-            this.tabControl1.ResumeLayout(false);
+            this.tabToplam.ResumeLayout(false);
             this.tabToplama.ResumeLayout(false);
             this.tabToplama.PerformLayout();
+            this.tabLog.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabToplam;
         private System.Windows.Forms.TabPage tabToplama;
         private System.Windows.Forms.TextBox txtIkinciSayi;
         private System.Windows.Forms.Label lblIkinciSayi;
@@ -167,6 +229,11 @@
         private System.Windows.Forms.Label lblBirinciSayi;
         private System.Windows.Forms.TextBox txtSonuc;
         private System.Windows.Forms.Label lblSonuc;
+        private System.Windows.Forms.Button btnIleri;
+        private System.Windows.Forms.TabPage tabLog;
+        private System.Windows.Forms.Button btnTemizle;
+        private System.Windows.Forms.Button btnGeri;
+        private System.Windows.Forms.ListView lvLog;
     }
 }
 

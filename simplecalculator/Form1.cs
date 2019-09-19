@@ -51,10 +51,12 @@ namespace simplecalculator
             {
                 int toplam = Topla(int.Parse(txtBirinciSayi.Text), int.Parse(txtIkinciSayi.Text));
                 txtSonuc.Text = toplam.ToString();
+                lvLog.Items.Add("Toplama işlemi başarılı:" + toplam);
             }
             else
             {
                 MessageBox.Show("Girdiğiniz değerler hatalı!");
+                lvLog.Items.Add("Toplama işlemi başarısız! txtbir = " + txtBirinciSayi.Text + " txtiki = " + txtIkinciSayi.Text);
             }
             EkraniAyarla(dogrulamaSonucu);
 
@@ -86,6 +88,21 @@ namespace simplecalculator
                 char.IsPunctuation(e.KeyChar)
                 )
                 e.Handled = true;
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            lvLog.Clear();
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            tabToplam.SelectedTab = tabToplama;
+        }
+
+        private void btnIleri_Click(object sender, EventArgs e)
+        {
+            tabToplam.SelectedTab = tabLog;
         }
     }
 }
