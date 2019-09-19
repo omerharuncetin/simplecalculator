@@ -75,6 +75,7 @@
             this.txtIkinciSayi.Name = "txtIkinciSayi";
             this.txtIkinciSayi.Size = new System.Drawing.Size(284, 27);
             this.txtIkinciSayi.TabIndex = 1;
+            this.txtIkinciSayi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIkinciSayi_KeyPress);
             // 
             // lblIkinciSayi
             // 
@@ -93,6 +94,7 @@
             this.txtBirinciSayi.Name = "txtBirinciSayi";
             this.txtBirinciSayi.Size = new System.Drawing.Size(284, 27);
             this.txtBirinciSayi.TabIndex = 0;
+            this.txtBirinciSayi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBirinciSayi_KeyPress);
             // 
             // btnTopla
             // 

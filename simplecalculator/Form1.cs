@@ -64,5 +64,28 @@ namespace simplecalculator
         {
             EkraniAyarla();
         }
+
+        private void txtBirinciSayi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (
+                char.IsLetter(e.KeyChar) ||
+                char.IsSymbol(e.KeyChar) ||
+                char.IsWhiteSpace(e.KeyChar) ||
+                char.IsPunctuation(e.KeyChar)
+                )
+                e.Handled = true;
+            
+        }
+
+        private void txtIkinciSayi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (
+                char.IsLetter(e.KeyChar) ||
+                char.IsSymbol(e.KeyChar) ||
+                char.IsWhiteSpace(e.KeyChar) ||
+                char.IsPunctuation(e.KeyChar)
+                )
+                e.Handled = true;
+        }
     }
 }
