@@ -17,13 +17,36 @@ namespace simplecalculator
             InitializeComponent();
         }
 
+        private int Topla(int birinciSayi, int ikinciSayi)
+        {
+            return birinciSayi + ikinciSayi;
+        }
+        
+        private bool Dogrula()
+        {
+            try
+            {
+                int.Parse(txtBirinciSayi.Text);
+                int.Parse(txtIkinciSayi.Text);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
         private void btnTopla_Click(object sender, EventArgs e)
         {
-            int birinciSayi, ikinciSayi, toplam;
-            birinciSayi = int.Parse(txtBirinciSayi.Text);
-            ikinciSayi = int.Parse(txtIkinciSayi.Text);
-            toplam = birinciSayi + ikinciSayi;
-            MessageBox.Show("Toplam: " + toplam);
+            if (Dogrula())
+            {
+                int toplam = Topla(int.Parse(txtBirinciSayi.Text), int.Parse(txtIkinciSayi.Text));
+                MessageBox.Show("Toplam: " + toplam);
+            }
+            else
+            {
+                MessageBox.Show("Girdiğiniz değerler hatalı!");
+            }
 
         }
     }
