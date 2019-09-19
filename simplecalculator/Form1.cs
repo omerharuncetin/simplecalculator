@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace simplecalculator
 {
-    public partial class Form1 : Form
+    public partial class FormTopla : Form
     {
-        public Form1()
+        public FormTopla()
         {
             InitializeComponent();
+        }
+
+        private void btnTopla_Click(object sender, EventArgs e)
+        {
+            int birinciSayi, ikinciSayi, toplam;
+            birinciSayi = int.Parse(txtBirinciSayi.Text);
+            ikinciSayi = int.Parse(txtIkinciSayi.Text);
+            toplam = birinciSayi + ikinciSayi;
+            MessageBox.Show("Toplam: " + toplam);
+
         }
     }
 }
